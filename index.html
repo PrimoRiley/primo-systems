@@ -6,33 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Primo Systems helps small-to-mid-size businesses in Grand Junction unlock growth with custom websites, AI tools, data pipelines, and ML solutions.">
 
-<!-- Tailwind CDN -->
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        // palette
-        bgBlack: '#00070A',     // almost-black background
-        surface:'#051515',      // charcoal card glass
-        teal:   '#00B3B3',      // bright accent teal
-        tealMid:'#008383'       // hover / secondary teal
+        bgBlack : '#00070A',   // global background (kept)
+        surface : '#1A1F1F',   // **lighter** charcoal for cards/sections
+        teal    : '#00B3B3',
+        tealMid : '#008383'
       },
-      fontFamily: { display: ['Inter', 'ui-sans-serif', 'system-ui'] }
+      fontFamily:{ display:['Inter','ui-sans-serif','system-ui'] }
     }
   }
 }
 </script>
-
-<!-- minimalist favicon -->
 <link rel="icon" type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' rx='16' fill='%2300070A'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-size='48' font-family='monospace' fill='%2300B3B3'%3EP%3C/text%3E%3C/svg%3E">
 </head>
 
 <body class="antialiased font-display bg-bgBlack text-slate-200">
 
-<!-- ── NAV ── -->
+<!-- ── HERO (unchanged) ── -->
 <nav class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-bgBlack/90 border-b border-slate-800">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
     <a href="#hero" class="text-xl font-semibold text-teal tracking-wide">Primo Systems</a>
@@ -42,9 +39,7 @@ tailwind.config = {
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <header id="hero" class="relative overflow-hidden pt-32 pb-24 bg-bgBlack">
-  <!-- soft teal glow blobs -->
   <div class="absolute -top-52 -left-32 h-[32rem] w-[32rem] rounded-full bg-teal/10 blur-[160px]"></div>
   <div class="absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-tealMid/15 blur-[140px]"></div>
 
@@ -79,17 +74,17 @@ tailwind.config = {
   <div class="relative max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-16 text-teal">What We Do Best</h2>
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="bg-surface/80 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
+      <div class="bg-surface/90 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
         <h3 class="text-xl font-semibold mb-3 text-teal">Bespoke Websites</h3>
-        <p class="text-slate-300">Accessible, SEO-ready sites built with modern stacks or no-code — whichever suits your timeline & budget.</p>
+        <p class="text-slate-200">Accessible, SEO-ready sites built with modern stacks or no-code — whichever suits your timetable.</p>
       </div>
-      <div class="bg-surface/80 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
+      <div class="bg-surface/90 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
         <h3 class="text-xl font-semibold mb-3 text-teal">AI Tooling & Chatbots</h3>
-        <p class="text-slate-300">From GPT-powered assistants to domain-specific agents that save hours of manual work.</p>
+        <p class="text-slate-200">From GPT-powered assistants to domain-specific agents that save hours of manual work.</p>
       </div>
-      <div class="bg-surface/80 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
+      <div class="bg-surface/90 backdrop-blur rounded-2xl shadow hover:shadow-xl transition p-8">
         <h3 class="text-xl font-semibold mb-3 text-teal">Data & ML Consulting</h3>
-        <p class="text-slate-300">Data warehousing, ETL pipelines, predictive modeling, and ML ops — tailored for SMEs.</p>
+        <p class="text-slate-200">Data warehousing, ETL pipelines, predictive modeling, and ML ops — tailored for SMEs.</p>
       </div>
     </div>
   </div>
@@ -103,17 +98,17 @@ tailwind.config = {
       <li>
         <span class="absolute -left-4 top-1.5 h-8 w-8 rounded-full bg-teal text-bgBlack flex items-center justify-center font-bold">1</span>
         <h4 class="text-xl font-semibold mb-2 text-teal">Discovery & Strategy</h4>
-        <p class="text-slate-300">Free consultation to map goals, pain points, and success metrics.</p>
+        <p class="text-slate-200">Free consultation to map goals, pain points, and success metrics.</p>
       </li>
       <li>
         <span class="absolute -left-4 top-1.5 h-8 w-8 rounded-full bg-tealMid text-bgBlack flex items-center justify-center font-bold">2</span>
         <h4 class="text-xl font-semibold mb-2 text-teal">Design & Build</h4>
-        <p class="text-slate-300">We prototype fast, iterate with your feedback, and ship production-ready solutions.</p>
+        <p class="text-slate-200">We prototype fast, iterate with your feedback, and ship production-ready solutions.</p>
       </li>
       <li>
         <span class="absolute -left-4 top-1.5 h-8 w-8 rounded-full bg-cyan-400 text-bgBlack flex items-center justify-center font-bold">3</span>
         <h4 class="text-xl font-semibold mb-2 text-teal">Launch & Support</h4>
-        <p class="text-slate-300">We deploy, monitor, and upskill your team so you get long-term ROI.</p>
+        <p class="text-slate-200">We deploy, monitor, and upskill your team so you get long-term ROI.</p>
       </li>
     </ol>
   </div>
@@ -124,37 +119,31 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-16 text-teal">Client Voices</h2>
     <div class="grid gap-10 lg:grid-cols-2">
-      <blockquote class="bg-surface/80 backdrop-blur rounded-2xl shadow p-8">
-        <p class="italic mb-4 text-slate-300">“Primo Systems revamped our site and integrated a custom ChatGPT bot that cut support emails by 60 %. ROI within weeks.”</p>
+      <blockquote class="bg-surface/90 backdrop-blur rounded-2xl shadow p-8">
+        <p class="italic mb-4 text-slate-200">“Primo Systems revamped our site and integrated a custom ChatGPT bot that cut support emails by 60 %. ROI within weeks.”</p>
         <footer class="font-semibold text-teal">— Sara M., Mesa Outdoors</footer>
       </blockquote>
-      <blockquote class="bg-surface/80 backdrop-blur rounded-2xl shadow p-8">
-        <p class="italic mb-4 text-slate-300">“Their data pipeline turned messy spreadsheets into live dashboards. Now we make decisions in real time.”</p>
+      <blockquote class="bg-surface/90 backdrop-blur rounded-2xl shadow p-8">
+        <p class="italic mb-4 text-slate-200">“Their data pipeline turned messy spreadsheets into live dashboards. Now we make decisions in real time.”</p>
         <footer class="font-semibold text-teal">— Jeff D., Grand Valley Logistics</footer>
       </blockquote>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- ── CONTACT & FOOTER (unchanged) ── -->
 <section id="contact" class="relative py-24 bg-gradient-to-tr from-tealMid to-teal text-bgBlack">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,.2),transparent_70%)]"></div>
   <div class="relative z-10 max-w-xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-10">Let’s Talk</h2>
     <form action="https://formspree.io/f/<YOUR_FORMSPREE_ID>" method="POST" class="space-y-6">
       <input type="hidden" name="_subject" value="Primo Systems Lead">
-      <div>
-        <label class="block mb-2 font-medium">Name</label>
-        <input required name="name" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"/>
-      </div>
-      <div>
-        <label class="block mb-2 font-medium">Email</label>
-        <input required type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"/>
-      </div>
-      <div>
-        <label class="block mb-2 font-medium">How can we help?</label>
-        <textarea required name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></textarea>
-      </div>
+      <div><label class="block mb-2 font-medium">Name</label>
+        <input required name="name" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></div>
+      <div><label class="block mb-2 font-medium">Email</label>
+        <input required type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></div>
+      <div><label class="block mb-2 font-medium">How can we help?</label>
+        <textarea required name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></textarea></div>
       <button class="w-full py-3 bg-bgBlack text-teal font-semibold rounded-xl shadow hover:bg-slate-900 transition">
         Send Message
       </button>
@@ -163,7 +152,6 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer class="bg-bgBlack border-t border-slate-800 text-slate-400 text-sm pt-10 pb-6">
   <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
     <p>&copy; <span id="year"></span> Primo Systems LLC</p>
