@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Primo Systems – AI & Web Consulting in Grand Junction, CO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Primo Systems helps small-to-mid-size businesses in Grand Junction unlock growth with custom websites, AI tools, data pipelines, and ML solutions.">
+<meta name="description" content="Primo Systems helps Western-Slope businesses unlock growth with custom websites, AI tools, data pipelines, and ML solutions.">
 
 <!-- Tailwind via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -14,8 +14,8 @@ tailwind.config = {
     extend: {
       colors: {
         bgBlack : '#00070A',
-        section : '#0e1417',     /* keeps Services */
-        sectionAlt : '#141b1e',  /* NEW – used by How-We-Work + Testimonials */
+        section : '#0e1417',
+        sectionAlt : '#141b1e',
         card    : 'rgba(25,32,35,.92)',
         teal    : '#00B3B3',
         cyan    : '#22D3EE',
@@ -34,44 +34,50 @@ tailwind.config = {
 
 <body class="antialiased font-display bg-bgBlack text-slate-200">
 
-<!-- ─── NAV (unchanged content, gradient hover) ─── -->
+<!-- ─── NAV ─── -->
 <nav class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-bgBlack/90 border-b border-slate-800">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
     <a href="#hero" class="text-xl font-semibold text-teal tracking-wide">Primo Systems</a>
     <a href="#contact"
        class="px-4 py-2 rounded-lg font-medium text-bgBlack transition
               bg-gradient-to-r from-teal to-tealMid hover:from-teal hover:to-cyan shadow">
-      Free&nbsp;Consult
+      Free Consult
     </a>
   </div>
 </nav>
 
-<!-- ─── HERO (identical) ─── -->
-<header id="hero" class="relative pt-32 pb-24 overflow-hidden bg-bgBlack">
-  <div class="absolute -top-52 -left-32 h-[32rem] w-[32rem] rounded-full bg-teal/10 blur-[160px]"></div>
-  <div class="absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-tealMid/15 blur-[140px]"></div>
+<!-- ─── HERO ─── -->
+<header id="hero" class="relative pt-24 pb-14 md:pt-32 md:pb-24 overflow-hidden bg-bgBlack">
+  <div class="hidden md:block absolute -top-52 -left-32 h-[32rem] w-[32rem] rounded-full bg-teal/10 blur-[160px]"></div>
+  <div class="hidden md:block absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-tealMid/15 blur-[140px]"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-14">
-    <div class="flex-1 text-center lg:text-left">
-      <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 text-white">
-        Build&nbsp;<span class="text-teal">AI-powered</span><br class="hidden sm:block">experiences&nbsp;faster
+  <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 text-center md:text-left">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white">
+        Build <span class="text-teal">AI-powered</span><br class="hidden md:inline"> experiences faster
       </h1>
-      <p class="text-lg text-slate-300 mb-8 max-w-md">
-        Websites, custom GPT agents, data pipelines, and ML solutions—delivered in weeks, not months. Serving Grand Junction &amp; beyond.
+
+      <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-md mx-auto md:mx-0">
+        I design blazing-fast websites and production-grade AI &amp; ML workflows—whether you want a low-code setup you can manage, a fully custom solution you own, or a hybrid I maintain. No lock-ins. Just what fits you best.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <a href="#contact" class="px-7 py-3 bg-teal text-bgBlack rounded-xl font-semibold shadow hover:bg-cyan transition">
-          Book&nbsp;Call
+
+
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto max-w-xs mx-auto md:mx-0">
+        <a href="#contact"
+           class="w-full sm:w-auto text-center px-7 py-3 bg-teal text-bgBlack rounded-xl font-semibold shadow hover:bg-cyan transition">
+          Book Call
         </a>
-        <a href="#services" class="px-7 py-3 border border-teal/60 rounded-xl font-medium hover:bg-teal/10 transition">
-          Our&nbsp;Services
+        <a href="#services"
+           class="w-full sm:w-auto text-center px-7 py-3 border border-teal/60 rounded-xl font-medium hover:bg-teal/10 transition">
+          Our Services
         </a>
       </div>
     </div>
-    <div class="flex-1">
+
+    <div class="flex-1 mt-10 md:mt-0">
       <img src="https://images.unsplash.com/photo-1526401485004-ef47dc209600?auto=format&fit=crop&w=900&q=80"
            alt="AI visualization"
-           class="rounded-3xl shadow-2xl ring-1 ring-teal/10">
+           class="max-w-xs sm:max-w-sm mx-auto md:max-w-none rounded-3xl shadow-2xl ring-1 ring-teal/10">
     </div>
   </div>
 </header>
@@ -80,123 +86,143 @@ tailwind.config = {
 <section id="services" class="relative py-24 bg-section">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,179,179,.10)_1px,transparent_0)] [background-size:22px_22px]"></div>
   <div class="relative max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-16 text-teal">What&nbsp;We&nbsp;Do&nbsp;Best</h2>
+    <h2 class="text-3xl font-bold text-center mb-16 text-teal">What We Do Best</h2>
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-teal">Bespoke Websites</h3>
-        <p class="text-slate-300">Accessible, SEO-ready sites built with modern stacks or no-code—whichever suits your timeline.</p>
+        <h3 class="text-xl font-semibold mb-3 text-teal">Web Experiences</h3>
+        <p class="text-slate-300">
+          SEO-first, high-performance websites tailored to your needs—whether custom-coded or built with no-code tools, we build sites hosted on the platform that best suits your business. You decide how hands-on you want to be.
+        </p>
       </div>
       <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-cyan/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-cyan">AI Tooling &amp; Chatbots</h3>
-        <p class="text-slate-300">From GPT-powered assistants to domain-specific agents that save hours of manual work.</p>
+        <h3 class="text-xl font-semibold mb-3 text-cyan">AI Tooling/MLOps</h3>
+        <p class="text-slate-300">
+          We build custom chat tools, automate lead follow-ups, summarize inboxes, or power internal search with AI trained on your business data. Whether it’s a ChatGPT-powered assistant, a prediction model for sales or scheduling, or a computer vision tool for your operations, I deliver cloud-ready solutions that are fully documented, built for your platform of choice, and flexible—whether you want hands-on control or full handoff.
+        </p>
       </div>
       <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-emerald">Data &amp; ML Consulting</h3>
-        <p class="text-slate-300">Data warehousing, ETL pipelines, predictive modeling, and ML ops—tailored for SMEs.</p>
+        <h3 class="text-xl font-semibold mb-3 text-emerald">Data Pipelines</h3>
+        <p class="text-slate-300">
+          Whether it’s spreadsheets, form responses, CRM exports, or app data. We turn scattered information into clear, real-time dashboards, building simple, automated workflows that help your team track what matters, using the tools and cloud platforms that fit your business.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- divider -->
 <div class="h-px bg-gradient-to-r from-transparent via-teal/40 to-transparent"></div>
 
 <!-- ─── HOW WE WORK ─── -->
 <section id="process" class="py-24 bg-sectionAlt">
   <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-16 text-teal">How&nbsp;We&nbsp;Work</h2>
+    <h2 class="text-3xl font-bold text-center mb-16 text-teal">How We Work</h2>
 
-    <div class="relative border-l-2 border-teal/30 ml-4 pl-8 space-y-14">
+    <div class="relative border-l-2 border-teal/30 ml-4 pl-8 space-y-20">
+
       <div class="flex items-start gap-6">
-        <span class="flex-none h-9 w-9 rounded-full bg-teal text-bgBlack font-bold flex items-center justify-center ring-4 ring-teal/20">1</span>
-        <div>
-          <h3 class="text-xl font-semibold text-teal mb-1">Discovery&nbsp;&amp;&nbsp;Strategy</h3>
-          <p class="text-slate-300">Free consultation to map goals, pain points, and success metrics.</p>
+        <span class="flex-none h-10 w-10 rounded-full bg-teal text-bgBlack font-bold flex items-center justify-center ring-4 ring-teal/20">1</span>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-teal">Discovery & Strategy</h3>
+          <p class="text-slate-300">
+            Deep-dive workshops map pain points, data flows, and growth goals.
+            You leave with a plain-English brief, high-level tech roadmap,
+            and AI build-vs-buy guide—<em>yours to keep.</em>
+          </p>
         </div>
       </div>
 
       <div class="flex items-start gap-6">
-        <span class="flex-none h-9 w-9 rounded-full bg-cyan text-bgBlack font-bold flex items-center justify-center ring-4 ring-cyan/20">2</span>
-        <div>
-          <h3 class="text-xl font-semibold text-cyan mb-1">Design&nbsp;&amp;&nbsp;Build</h3>
-          <p class="text-slate-300">We prototype fast, iterate with your feedback, and ship production-ready solutions.</p>
+        <span class="flex-none h-10 w-10 rounded-full bg-cyan text-bgBlack font-bold flex items-center justify-center ring-4 ring-cyan/20">2</span>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-cyan">Design & Build</h3>
+          <p class="text-slate-300">
+            Rapid prototypes for UI and ML pipelines using Next.js, Tailwind,
+            LangChain, or vanilla SQL—whatever best fits <strong>your</strong> stack.
+            All code sits in your GitHub with clear docs and tests.
+          </p>
         </div>
       </div>
 
       <div class="flex items-start gap-6">
-        <span class="flex-none h-9 w-9 rounded-full bg-emerald text-bgBlack font-bold flex items-center justify-center ring-4 ring-emerald/20">3</span>
-        <div>
-          <h3 class="text-xl font-semibold text-emerald mb-1">Launch&nbsp;&amp;&nbsp;Support</h3>
-          <p class="text-slate-300">We deploy, monitor, and up-skill your team so you get long-term ROI.</p>
+        <span class="flex-none h-10 w-10 rounded-full bg-emerald text-bgBlack font-bold flex items-center justify-center ring-4 ring-emerald/20">3</span>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-emerald">Launch & Upskill</h3>
+          <p class="text-slate-300">
+            Zero-downtime deploys, KPI dashboards, and hands-on training so your
+            team can iterate without me. Need tweaks later? Ping me ad-hoc or pick
+            a lightweight retainer.
+          </p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- divider -->
 <div class="h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent"></div>
 
 <!-- ─── TESTIMONIALS ─── -->
 <section class="py-24 bg-section">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-16 text-teal">Client&nbsp;Voices</h2>
+    <h2 class="text-3xl font-bold text-center mb-16 text-teal">Client Voices</h2>
     <div class="grid gap-10 lg:grid-cols-2">
       <blockquote class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8">
         <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-teal"></span>
-        <p class="italic mb-4 text-slate-300">“Primo Systems revamped our site and integrated a custom ChatGPT bot that cut support emails by 60 %. ROI within weeks.”</p>
+        <p class="italic mb-4 text-slate-300">
+          “Primo Systems rebuilt our site and deployed a GPT-powered chatbot; support emails dropped&nbsp;60 % in one quarter.”
+        </p>
         <footer class="font-semibold text-teal">— Sara M., Mesa Outdoors</footer>
       </blockquote>
       <blockquote class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-cyan/20 p-8">
         <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-cyan"></span>
-        <p class="italic mb-4 text-slate-300">“Their data pipeline turned messy spreadsheets into live dashboards. Now we make decisions in real-time.”</p>
+        <p class="italic mb-4 text-slate-300">
+          “Their data pipeline turned weekly spreadsheets into live dashboards—decision-making is now real-time.”
+        </p>
         <footer class="font-semibold text-cyan">— Jeff D., Grand Valley Logistics</footer>
       </blockquote>
     </div>
   </div>
 </section>
 
-<!-- divider -->
 <div class="h-px bg-gradient-to-r from-transparent via-teal/40 to-transparent"></div>
 
-<!-- BOOK A CALL (tint update only) -->
+<!-- ─── BOOK A CALL ─── -->
 <section id="booking" class="py-24 bg-sectionAlt">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-10 text-cyan">Book&nbsp;a&nbsp;Free&nbsp;Consult</h2>
-
-    <!-- light-cyan wrapper so text is readable -->
+    <h2 class="text-3xl font-bold text-center mb-10 text-cyan">Book a Free Consult</h2>
     <div class="w-full rounded-2xl overflow-hidden shadow ring-1 ring-teal/20 bg-cyan-50">
       <iframe
         src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0V5FlDL0agO2W-fi6nyrhfIn3v66we5-nECI7S-OvJorU5JVPNsGY04oAqG1DCHPn_lVOl8P7S?gv=true"
         style="border:0;background:#ffffff"
-        width="100%"
-        height="600"
-        loading="lazy"
-        frameborder="0">
+        width="100%" height="600" loading="lazy" frameborder="0">
       </iframe>
     </div>
   </div>
 </section>
 
-
-<!-- divider -->
 <div class="h-px bg-gradient-to-r from-transparent via-emerald/40 to-transparent"></div>
 
 <!-- ─── CONTACT ─── -->
 <section id="contact" class="relative py-24 bg-gradient-to-tr from-emerald via-teal to-cyan text-bgBlack">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,.25),transparent_70%)]"></div>
   <div class="relative z-10 max-w-xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">Let’s&nbsp;Talk</h2>
+    <h2 class="text-3xl font-bold text-center mb-10">Let’s Talk</h2>
     <form action="https://formspree.io/f/<YOUR_FORMSPREE_ID>" method="POST" class="space-y-6">
       <input type="hidden" name="_subject" value="Primo Systems Lead">
-      <div><label class="block mb-2 font-medium">Name</label>
-        <input required name="name" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></div>
-      <div><label class="block mb-2 font-medium">Email</label>
-        <input required type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></div>
-      <div><label class="block mb-2 font-medium">How&nbsp;can&nbsp;we&nbsp;help?</label>
-        <textarea required name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></textarea></div>
+      <div>
+        <label class="block mb-2 font-medium">Name</label>
+        <input required name="name" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack">
+      </div>
+      <div>
+        <label class="block mb-2 font-medium">Email</label>
+        <input required type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack">
+      </div>
+      <div>
+        <label class="block mb-2 font-medium">How can we help?</label>
+        <textarea required name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/90 text-bgBlack"></textarea>
+      </div>
       <button class="w-full py-3 bg-bgBlack text-teal font-semibold rounded-xl shadow hover:bg-slate-900 transition">
-        Send&nbsp;Message
+        Send Message
       </button>
     </form>
     <p class="mt-6 text-center text-sm text-bgBlack/80">Based in Grand Junction • Serving Western Colorado &amp; beyond</p>
@@ -206,7 +232,7 @@ tailwind.config = {
 <!-- ─── FOOTER ─── -->
 <footer class="bg-bgBlack border-t border-slate-800 text-slate-400 text-sm pt-10 pb-6">
   <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
-    <p>&copy;&nbsp;<span id="year"></span>&nbsp;Primeau LLC</p>
+    <p>&copy; <span id="year"></span> Primeau LLC</p>
     <p><a href="mailto:primeauriley@gmail.com" class="hover:text-teal">primeauriley@gmail.com</a></p>
     <p>Grand Junction, CO</p>
   </div>
