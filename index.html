@@ -36,7 +36,7 @@ tailwind.config = {
 
 <!-- ─── NAV ─── -->
 <nav class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-bgBlack/90 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:py-6">
     <a href="#hero" class="flex items-center text-xl font-semibold text-teal tracking-wide">
       <img src="assets/logo.png" alt="Primo Systems Logo" class="h-20 w-20 mr-2 rounded-lg shadow-sm object-contain" />
       Primo Systems
@@ -50,7 +50,7 @@ tailwind.config = {
 </nav>
 
 <!-- ─── HERO ─── -->
-<header id="hero" class="relative pt-24 pb-14 md:pt-32 md:pb-24 overflow-hidden bg-bgBlack">
+<header id="hero" class="relative pt-32 pb-14 md:pt-40 md:pb-24 overflow-hidden bg-bgBlack">
   <div class="hidden md:block absolute -top-52 -left-32 h-[32rem] w-[32rem] rounded-full bg-teal/10 blur-[160px]"></div>
   <div class="hidden md:block absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-tealMid/15 blur-[140px]"></div>
 
@@ -67,7 +67,7 @@ tailwind.config = {
 
       <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto max-w-xs mx-auto md:mx-0">
         <a href="#contact"
-           class="w-full sm:w-auto text-center px-6 py-2 md:py-2.5 bg-teal text-bgBlack rounded-xl font-semibold shadow hover:bg-cyan transition text-base md:text-base">
+           class="w-full sm:w-auto flex items-center justify-center text-center px-6 py-2 md:py-2.5 bg-teal text-bgBlack rounded-xl font-semibold shadow hover:bg-cyan transition text-base md:text-base">
           Contact
         </a>
         <a href="#services"
@@ -88,11 +88,13 @@ tailwind.config = {
     </div>
 
     <div class="flex-1 mt-10 md:mt-0 relative">
-      <img src="assets/background.png"
-           alt="AI visualization background"
-           class="max-w-xs sm:max-w-sm mx-auto md:max-w-none shadow-2xl max-h-[22rem] md:max-h-[18rem] object-contain" />
+      <img src="assets/GJ.png"
+           alt="Grand Junction, Colorado visualization background"
+           class="max-w-xs sm:max-w-sm mx-auto md:max-w-lg shadow-2xl max-h-[22rem] md:max-h-[18rem] object-contain" />
       <!-- Left fade, always visible, responsive width -->
       <div class="absolute top-0 left-0 h-full w-8 sm:w-12 md:w-16 lg:w-[8vw] xl:w-[10vw] bg-gradient-to-r from-bgBlack to-transparent pointer-events-none"></div>
+      <!-- Right fade, always visible, responsive width -->
+      <div class="absolute top-0 right-0 h-full w-8 sm:w-12 md:w-16 lg:w-[8vw] xl:w-[10vw] bg-gradient-to-l from-bgBlack to-transparent pointer-events-none"></div>
     </div>
   </div>
 </header>
@@ -202,12 +204,13 @@ tailwind.config = {
          class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8 flex flex-col hover:ring-emerald/40 transition">
         <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-emerald"></span>
         <div class="flex items-center mb-4">
-          <img src="assets/bronzeDoorLogo.png" alt="Bronze Door Homes Logo" class="h-20 w-20 mr-3 rounded shadow object-contain" />
-          <span class="underline text-emerald font-semibold text-lg">www.bronzedoorhomes.com</span>
+          <img src="assets/bronzeDoorLogo.png" alt="Bronze Door Homes Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
+          <span class="underline text-emerald font-semibold text-lg break-all">www.bronzedoorhomes.com</span>
         </div>
         <p class="italic mb-4 text-slate-300">
           Bronze Door Homes showcases their custom homes portfolio on a user-friendly website platform. They wanted a site they could update themselves—no ongoing maintenance fees or lock-in. We set up everything, including Google Workspace emails, so their team can focus on building homes, not managing tech. Primo Systems remains on standby as their Google Workspace admin if they ever need help.
         </p>
+        <footer class="font-semibold text-emerald break-all">www.bronzedoorhomes.com</footer>
       </a>
     </div>
   </div>
@@ -307,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
     --df-messenger-font-color: #000;
     --df-messenger-font-family: Google Sans;
     --df-messenger-chat-background: #FFFFFF;
-    --df-messenger-message-user-background: #FFFFFF;
+    --df-messenger-message-user-background: #DDDDDD;
     --df-messenger-message-bot-background: #C8E6C9;
     bottom: 16px;
     right: 16px;
