@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Download Primo Systems Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgBlack : '#00070A',
+            section : '#0e1417',
+            sectionAlt : '#141b1e',
+            card    : 'rgba(25,32,35,.92)',
+            teal    : '#00B3B3',
+            cyan    : '#22D3EE',
+            emerald : '#34D399',
+            tealMid : '#008383'
+          },
+          fontFamily:{ display:['Inter','ui-sans-serif','system-ui'] }
+        }
+      }
+    }
+  </script>
+  <meta http-equiv="refresh" content="0; url=assets/primo.vcf">
+  <script>
+    // For browsers that block meta refresh, trigger download via JS
+    window.onload = function() {
+      const link = document.createElement('a');
+      link.href = 'assets/primo.vcf';
+      link.download = 'Riley-Primeau-Primo-Systems.vcf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+  </script>
+</head>
+<body class="antialiased font-display bg-bgBlack text-slate-200 min-h-screen flex items-center justify-center">
+
+  <div class="bg-card rounded-2xl shadow-inner ring-1 ring-teal/20 p-8 max-w-md w-full mx-4 text-center">
+    <img src="assets/logo.png" alt="Primo Systems Logo" class="h-20 w-20 mx-auto mb-4 rounded-lg shadow object-contain" />
+    <h1 class="text-2xl font-bold text-teal mb-1">Riley Primeau</h1>
+    <h2 class="text-lg font-semibold text-cyan mb-6">Primo Systems</h2>
+    <div class="space-y-2 mb-6 text-base text-slate-200">
+      <div>
+        <a href="tel:7206847940" class="hover:text-cyan transition">720-684-7940</a>
+      </div>
+      <div>
+        <a href="mailto:primeauriley@gmail.com" class="hover:text-cyan transition">primeauriley@gmail.com</a>
+      </div>
+      <div>
+        Grand Junction, CO, USA
+      </div>
+    </div>
+    <a href="assets/primo.vcf" download="Riley-Primeau-Primo-Systems.vcf"
+       class="inline-block px-6 py-2 bg-teal text-bgBlack rounded-xl font-semibold shadow hover:bg-cyan transition mb-2">
+      Download vCard
+    </a>
+  </div>
+
+</body>
+</html>
