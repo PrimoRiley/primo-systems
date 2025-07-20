@@ -1,0 +1,39 @@
+<!-- assets/nav.html -->
+<nav class="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none">
+  <div id="navBubble"
+       class="pointer-events-auto flex items-center gap-4 md:gap-6
+              px-4 py-2 md:px-6 rounded-full border border-slate-700
+              bg-bgBlack/80 backdrop-blur shadow-lg transition-all duration-300">
+
+    <a href="index.html#hero" class="flex items-center shrink-0">
+      <img src="assets/logo.png" alt="Primo Systems"
+           class="h-16 w-16 rounded-xl object-contain" />
+    </a>
+
+    <button id="navToggle"
+            class="md:hidden flex items-center justify-center shrink-0
+                   w-10 h-10 rounded-full hover:bg-white/5 transition"
+            aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <div id="navLinks"
+         class="hidden md:flex items-center gap-4 lg:gap-6 text-slate-300">
+      <a href="web-services.html"     class="link-pill hover:text-teal">Web&nbsp;Builds</a>
+      <a href="ai-data-services.html" class="link-pill hover:text-cyan">AI&nbsp;+&nbsp;Data</a>
+      <a href="index.html#process"    class="link-pill hover:text-emerald">Process</a>
+      <a href="index.html#contact"    class="link-pill hover:text-tealMid">Contact</a>
+    </div>
+
+    <a href="index.html#booking"
+       class="hidden md:inline-block ml-auto px-4 py-2 rounded-lg font-medium
+              text-bgBlack bg-gradient-to-r from-teal to-tealMid
+              hover:from-teal hover:to-cyan shadow">
+      Free Consult
+    </a>
+  </div>
+</nav>
