@@ -8,62 +8,132 @@
 
 <!-- Tailwind via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="../assets/tailwind-config.js"></script>
+<script src="../../assets/tailwind-config.js"></script>
 
-<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16.png">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
-<body class="antialiased font-display bg-bgBlack text-slate-200">
+<body class="antialiased font-display bg-bgBlack text-slate-200" style="background-color: #00070A;">
 
-<!-- ─── NAV ─── -->
-<!-- ─── FLOATING NAV ISLAND ─── -->
-<!-- ─── FLOATING / BAR NAV ─── -->
-<nav class="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none">
-  <div id="navBubble"
-       class="pointer-events-auto relative flex items-center gap-4 md:gap-6
-              px-4 py-2 md:px-6 rounded-full border border-slate-700
-              bg-bgBlack/80 backdrop-blur shadow-lg transition-all
-              duration-300 ease-out">
+<!-- NAV (same as home) -->
 
-    <!-- logo -->
-    <a href="index.html#hero" class="flex items-center shrink-0">
-      <img src="../assets/logo.png" alt="Primo Systems"
-           class="h-20 w-20 rounded-xl object-contain" />
-    </a>
+<div id="nav-placeholder"></div>
 
-    <!-- burger (≤ md) -->
-    <button id="navToggle"
-            class="md:hidden flex items-center justify-center shrink-0
-                   w-10 h-10 rounded-full hover:bg-white/5 transition"
-            aria-label="Open menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+<script>
+  // Page Transition Functions
+  function createTransitionOverlay() {
+    if (document.getElementById('transition-overlay')) return;
+    
+    const overlay = document.createElement('div');
+    overlay.id = 'transition-overlay';
+    overlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #0d9488, #06b6d4);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+  }
 
-    <!-- links -->
-    <div id="navLinks"
-         class="hidden md:flex items-center gap-4 lg:gap-6 text-slate-300">
-      <a href="web-services.html"        class="link-pill hover:text-teal">Web&nbsp;Builds</a>
-      <a href="ai-data-services.html"    class="link-pill hover:text-cyan">AI&nbsp;+&nbsp;Data</a>
-      <a href="index.html#process"       class="link-pill hover:text-emerald">Process</a>
-      <a href="index.html#contact"       class="link-pill hover:text-tealMid">Contact</a>
-    </div>
+  function navigateWithTransition(url) {
+    const overlay = createTransitionOverlay();
+    if (!overlay) return;
+    
+    // Show overlay
+    requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+      overlay.style.pointerEvents = 'auto';
+    });
+    
+    // Navigate after overlay is visible
+    setTimeout(() => {
+      window.location.href = url;
+    }, 200);
+  }
 
-    <!-- free‑consult button (≥ md) -->
-    <a href="index.html#booking"
-       class="hidden md:inline-block ml-auto px-4 py-2 rounded-lg font-medium
-              text-bgBlack bg-gradient-to-r from-teal to-tealMid
-              hover:from-teal hover:to-cyan shadow">
-      Free Consult
-    </a>
-  </div>
-</nav>
+  function shouldInterceptLink(element) {
+    if (element.tagName !== 'A') return false;
+    
+    const href = element.getAttribute('href');
+    if (!href) return false;
+    
+    // Allow hash links on the same page (scroll behavior)
+    if (href.startsWith('#')) return false;
+    
+    // Handle cross-page anchor links (like ../home/#contact from other pages)
+    if (href.includes('#')) {
+      const currentPath = window.location.pathname;
+      const [targetPath, anchor] = href.split('#');
+      
+      // If we're on the home page and the link points to home page anchor, don't intercept
+      if (currentPath.includes('/home/') && targetPath.includes('/home/')) {
+        return false;
+      }
+      
+      // If we're not on the target page, intercept the navigation
+      if (!currentPath.includes(targetPath.replace('../', '').replace('/', ''))) {
+        return true;
+      }
+      
+      return false;
+    }
+    
+    // Skip external links, mailto, tel
+    if (href.startsWith('http') || href.startsWith('mailto:') || 
+        href.startsWith('tel:')) {
+      return false;
+    }
+    
+    // Skip links that open in new tab
+    if (element.target === '_blank') return false;
+    
+    return true;
+  }
+
+  function initNav() {
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      navLinks.classList.toggle("flex");
+      navLinks.classList.toggle("flex-col");
+      navLinks.classList.toggle("absolute");
+      navLinks.classList.toggle("top-20");
+      navLinks.classList.toggle("bg-bgBlack");
+      navLinks.classList.toggle("rounded-xl");
+      navLinks.classList.toggle("p-4");
+      navLinks.classList.toggle("z-50");
+    });
+  }
+
+  // Inject nav component and init everything
+  fetch('../components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+      initNav();
+      
+      // Set up page transitions using event delegation
+      document.addEventListener('click', (e) => {
+        if (shouldInterceptLink(e.target)) {
+          e.preventDefault();
+          navigateWithTransition(e.target.href);
+        }
+      });
+    });
+</script>
+
 
 
 <!-- ─── HERO ─── -->
@@ -105,7 +175,7 @@
     </div>
 
     <div class="flex-1 mt-10 md:mt-0 relative">
-      <img src="../assets/GJ.png"
+      <img src="../../assets/GJ.png"
            alt="Grand Junction, Colorado visualization background"
            class="max-w-xs sm:max-w-sm mx-auto md:max-w-lg shadow-2xl max-h-[22rem] md:max-h-[18rem] object-contain" />
       <!-- Left fade, always visible, responsive width -->
@@ -200,7 +270,7 @@
          class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-cyan/20 p-8 flex flex-col hover:ring-cyan/40 transition">
         <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-cyan"></span>
         <div class="flex items-center mb-4">
-          <img src="../assets/portfolioLogo.jpg" alt="Bronze Door Homes Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
+          <img src="../../assets/portfolioLogo.jpg" alt="Bronze Door Homes Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
           <span class="underline text-cyan font-semibold text-lg">primoriley.github.io</span>
         </div>
         <p class="italic mb-4 text-slate-300">
@@ -221,7 +291,7 @@
          class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8 flex flex-col hover:ring-emerald/40 transition">
         <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-emerald"></span>
         <div class="flex items-center mb-4">
-          <img src="../assets/bronzeDoorLogo.png" alt="Bronze Door Homes Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
+          <img src="../../assets/bronzeDoorLogo.png" alt="Bronze Door Homes Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
           <span class="underline text-emerald font-semibold text-lg break-all">www.bronzedoorhomes.com</span>
         </div>
         <p class="italic mb-4 text-slate-300">
@@ -345,12 +415,7 @@ document.addEventListener('DOMContentLoaded', function () {
       width:calc(100% - 4rem);   /* almost full width */
       border-radius:0.75rem;
       justify-content:space-between;
-      animation:slideDown .35s ease-out both;
     }
-  }
-  @keyframes slideDown{
-    from{opacity:0;transform:translateY(-1rem) scale(.95)}
-    to  {opacity:1;transform:translateY(0) scale(1)}
   }
 
 </style>

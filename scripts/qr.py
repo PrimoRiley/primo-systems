@@ -7,4 +7,4 @@ url = "https://primo-systems.com"
 qr = qrcode.make(url)
 
 # Save it
-qr.save("../assets/my_website_qr.png")
+qr.save("../../assets/my_website_qr.png")
