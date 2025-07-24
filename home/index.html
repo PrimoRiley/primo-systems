@@ -150,6 +150,9 @@
       <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-md mx-auto md:mx-0">
         I design blazing-fast websites and production-grade AI &amp; ML workflows—whether you want a low-code setup you can manage, a fully custom solution you own, or a hybrid I maintain. No lock-ins. Just what fits you best.
       </p>
+      <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-md mx-auto md:mx-0">
+        Feel free to brainstorm ideas or ask questions with the tailored assistant in the bottom-right corner.
+      </p>
 
 
       <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto max-w-xs mx-auto md:mx-0">
@@ -191,23 +194,31 @@
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,179,179,.10)_1px,transparent_0)] [background-size:22px_22px]"></div>
   <div class="relative max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-16 text-teal">What We Do Best</h2>
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-teal">Web Experiences</h3>
+    <div class="grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
+      <!-- Web Experiences -->
+      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8 hover:ring-teal/40 transition block cursor-pointer"
+           onclick="navigateWithTransition('/web-services')">
+        <h3 class="text-2xl font-semibold mb-4 text-teal">Web Experiences</h3>
         <p class="text-slate-300">
           SEO-first, high-performance websites tailored to your needs—whether custom-coded or built with no-code tools, we build sites hosted on the platform that best suits your business. You decide how hands-on you want to be.
         </p>
       </div>
-      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-cyan/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-cyan">AI Tooling/MLOps</h3>
+
+      <!-- AI Application Setup -->
+      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-cyan/20 p-8 hover:ring-cyan/40 transition block cursor-pointer"
+           onclick="navigateWithTransition('/ai-data-services')">
+        <h3 class="text-2xl font-semibold mb-4 text-cyan">AI Application Setup</h3>
         <p class="text-slate-300">
-          We build custom chat tools, automate lead follow-ups, summarize inboxes, or power internal search with AI trained on your business data. Whether it’s a ChatGPT-powered assistant, a prediction model for sales or scheduling, or a computer vision tool for your operations, I deliver cloud-ready solutions that are fully documented, built for your platform of choice, and flexible—whether you want hands-on control or full handoff.
+          I help businesses integrate AI tools into their workflows, whether by setting up existing applications or creating custom solutions. From conversational assistants to document summarization tools, I ensure the AI fits seamlessly into your operations, empowering your team to work smarter and faster.
         </p>
       </div>
-      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8">
-        <h3 class="text-xl font-semibold mb-3 text-emerald">Data Pipelines</h3>
+
+      <!-- Custom AI/Deep Learning Solutions -->
+      <div class="bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8 hover:ring-emerald/40 transition block cursor-pointer"
+           onclick="navigateWithTransition('/ai-data-services')">
+        <h3 class="text-2xl font-semibold mb-4 text-emerald">Custom AI/Deep Learning</h3>
         <p class="text-slate-300">
-          Whether it’s spreadsheets, form responses, CRM exports, or app data. We turn scattered information into clear, real-time dashboards, building simple, automated workflows that help your team track what matters, using the tools and cloud platforms that fit your business.
+          For businesses with unique needs, I design and deploy custom AI solutions. Whether it’s a classifier for tabular data, a computer vision model, or a pipeline for predictive analytics, I deliver tailored systems that solve your specific challenges and scale with your growth.
         </p>
       </div>
     </div>
@@ -226,9 +237,9 @@
       <div class="flex items-start gap-6">
         <span class="flex-none h-9 w-9 rounded-full bg-teal text-bgBlack font-bold flex items-center justify-center ring-4 ring-teal/20">1</span>
         <div>
-          <h3 class="text-xl font-semibold text-teal mb-1">Discovery&nbsp;&amp;&nbsp;Strategy</h3>
+          <h3 class="text-xl font-semibold text-teal mb-1">Collaborative Discovery</h3>
           <p class="text-slate-300">
-            We start by getting to know your business—goals, workflows, and pain points. Together, we map out what success looks like and the best path to get there. Whether you want a fully managed solution, a custom tool your team can build on, or something in between, I’ll craft a clear, realistic plan that fits how <em>you</em> want to work.
+            Every project begins with listening. I take the time to understand your business, how your team operates, and where technology could create meaningful impact. Together, we outline a realistic strategy—whether that means solving a specific pain point or building toward a long-term vision. I also assess your current tools and technical capacity to tailor a solution that integrates smoothly into your workflow.
           </p>
         </div>
       </div>
@@ -236,9 +247,9 @@
       <div class="flex items-start gap-6">
         <span class="flex-none h-9 w-9 rounded-full bg-cyan text-bgBlack font-bold flex items-center justify-center ring-4 ring-cyan/20">2</span>
         <div>
-          <h3 class="text-xl font-semibold text-cyan mb-1">Design&nbsp;&amp;&nbsp;Build</h3>
+          <h3 class="text-xl font-semibold text-cyan mb-1">Thoughtful Design &amp; Build</h3>
           <p class="text-slate-300">
-            I move fast—from prototypes to production—with your feedback at the center. Whether it's a data dashboard, a finely tuned ML pipeline, or a polished website, everything is built with long-term usability and clarity in mind.
+            Based on our plan, I create streamlined, maintainable systems that match your team's comfort level. That might mean a no-code solution for you and your staff, or a fully managed backend you never have to touch. Either way, I keep you in the loop with clear updates and working demos throughout.
           </p>
         </div>
       </div>
@@ -246,9 +257,9 @@
       <div class="flex items-start gap-6">
         <span class="flex-none h-9 w-9 rounded-full bg-emerald text-bgBlack font-bold flex items-center justify-center ring-4 ring-emerald/20">3</span>
         <div>
-          <h3 class="text-xl font-semibold text-emerald mb-1">Launch&nbsp;&amp;&nbsp;Support</h3>
+          <h3 class="text-xl font-semibold text-emerald mb-1">Launch with Confidence</h3>
           <p class="text-slate-300">
-            Once it’s live, I make sure everything runs smoothly—handling deployment, providing training if needed, and ensuring long-term stability. You’ll know me personally, and you can always reach out directly if something comes up. No tickets, no long wait times—just a quick call to someone who knows your system inside and out.
+            Before launch, I handle all the technical details—testing, deployment, handoff, and support setup. If your team wants to manage the system, I’ll make sure it’s documented and intuitive. If you'd rather offload everything, I can take care of it long-term. Either way, I’m here as a partner, not a vendor—just a direct message away whenever you need help.
           </p>
         </div>
       </div>
@@ -261,7 +272,7 @@
 <div class="h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent"></div>
 
 <!-- ─── TESTIMONIALS ─── -->
-<section class="py-24 bg-section">
+<section id="clients" class="py-24 bg-section">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-16 text-teal">Clients</h2>
     <div class="grid gap-10 lg:grid-cols-2">
@@ -278,14 +289,6 @@
         </p>
         <footer class="font-semibold text-cyan">— Riley Primeau (Owner &amp; Developer)</footer>
       </a>
-      <!-- Existing Client Tile -->
-      <blockquote class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8">
-        <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-teal"></span>
-        <p class="italic mb-4 text-slate-300">
-          “Primo Systems rebuilt our site and deployed a GPT-powered chatbot; support emails dropped&nbsp;60 % in one quarter.”
-        </p>
-        <footer class="font-semibold text-teal">— Sara M., Mesa Outdoors</footer>
-      </blockquote>
       <!-- Bronze Door Homes Tile (unchanged) -->
       <a href="https://www.bronzedoorhomes.com/" target="_blank" rel="noopener"
          class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-emerald/20 p-8 flex flex-col hover:ring-emerald/40 transition">
@@ -297,7 +300,20 @@
         <p class="italic mb-4 text-slate-300">
           Bronze Door Homes showcases their custom homes portfolio on a user-friendly website platform. They wanted a site they could update themselves—no ongoing maintenance fees or lock-in. We set up everything, including Google Workspace emails, so their team can focus on building homes, not managing tech. Primo Systems remains on standby as their Google Workspace admin if they ever need help.
         </p>
-        <footer class="font-semibold text-emerald break-all">www.bronzedoorhomes.com</footer>
+        <!-- <footer class="font-semibold text-emerald break-all">www.bronzedoorhomes.com</footer> -->
+      </a>
+      <!-- Entelligage Client Tile -->
+      <a href="https://entelligage.com/" target="_blank" rel="noopener"
+        class="relative bg-card backdrop-blur rounded-2xl shadow-inner ring-1 ring-teal/20 p-8 flex flex-col hover:ring-teal/40 transition">
+        <span class="hidden lg:block absolute -left-1.5 top-4 h-10 w-1.5 rounded bg-teal"></span>
+        <div class="flex items-center mb-4">
+          <img src="../../assets/entelligageLogo.webp" alt="Entelligage Logo" class="h-12 w-12 mr-3 rounded shadow object-contain" />
+          <span class="underline text-teal font-semibold text-lg break-all">entelligage.com</span>
+        </div>
+        <p class="italic mb-4 text-slate-300">
+          For Entelligage, I built AI-powered chat assistants that let businesses query their own data through natural conversations. I also helped develop automated agent workflows to streamline operations. My role focused on turning advanced AI into simple, usable tools for everyday teams. Feel free to check out what Entelligage has to offer, as they are a great source for AI solutions (the demos page is a great place to start).
+        </p>
+        <!-- <footer class="font-semibold text-teal">— Entelligage</footer> -->
       </a>
     </div>
   </div>
