@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <title>Web & App Development | Primo Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Packages and pricing for website, e‑commerce, and custom app development by Primo Systems.">
+
+  <!-- Tailwind via CDN + same custom palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../assets/tailwind-config.js"></script>
+  <link rel="stylesheet" href="../../assets/styles.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+</head>
+
+<body class="antialiased font-display bg-bgBlack text-slate-200" style="background-color: #00070A;">
+
+<!-- NAV (same as home) -->
+
+<div id="nav-placeholder"></div>
+
+<script>
+  function initNav() {
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle?.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      navLinks.classList.toggle("flex");
+      navLinks.classList.toggle("flex-col");
+      navLinks.classList.toggle("absolute");
+      navLinks.classList.toggle("top-20");
+      navLinks.classList.toggle("bg-bgBlack");
+      navLinks.classList.toggle("rounded-xl");
+      navLinks.classList.toggle("p-4");
+      navLinks.classList.toggle("z-50");
+    });
+  }
+
+  // Page Transition Functions
+  function createTransitionOverlay() {
+    if (document.getElementById('transition-overlay')) return;
+    
+    const overlay = document.createElement('div');
+    overlay.id = 'transition-overlay';
+    overlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #0d9488, #06b6d4);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function navigateWithTransition(url) {
+    const overlay = createTransitionOverlay();
+    if (!overlay) return;
+    
+    // Show overlay
+    requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+      overlay.style.pointerEvents = 'auto';
+    });
+    
+    // Navigate after overlay is visible
+    setTimeout(() => {
+      window.location.href = url;
+    }, 200);
+  }
+
+  function shouldInterceptLink(element) {
+    if (element.tagName !== 'A') return false;
+    
+    const href = element.getAttribute('href');
+    if (!href) return false;
+    
+    // Allow hash links on the same page (scroll behavior)
+    if (href.startsWith('#')) return false;
+    
+    // Handle cross-page anchor links (like ../home/#contact from other pages)
+    if (href.includes('#')) {
+      const currentPath = window.location.pathname;
+      const [targetPath, anchor] = href.split('#');
+      
+      // If we're on the home page and the link points to home page anchor, don't intercept
+      if (currentPath.includes('/home/') && targetPath.includes('/home/')) {
+        return false;
+      }
+      
+      // If we're not on the target page, intercept the navigation
+      if (!currentPath.includes(targetPath.replace('../', '').replace('/', ''))) {
+        return true;
+      }
+      
+      return false;
+    }
+    
+    // Skip external links, mailto, tel
+    if (href.startsWith('http') || href.startsWith('mailto:') || 
+        href.startsWith('tel:')) {
+      return false;
+    }
+    
+    // Skip links that open in new tab
+    if (element.target === '_blank') return false;
+    
+    return true;
+  }
+
+  // Inject nav component and init everything
+  fetch('../components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+      initNav();
+      
+      // Set up page transitions using event delegation
+      document.addEventListener('click', (e) => {
+        if (shouldInterceptLink(e.target)) {
+          e.preventDefault();
+          navigateWithTransition(e.target.href);
+        }
+      });
+    });
+</script>
+
+
+
+<!-- HERO -->
+<header class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-bgBlack text-center px-4 sm:px-8">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 px-2 sm:px-0">
+    <span class="text-teal">Website</span> &amp; <span class="text-teal">App</span> Development
+  </h1>
+  <p class="max-w-xl mx-auto text-slate-300 text-lg">
+    From single‑page sites to full‑stack web apps—built fast, SEO‑friendly, and ready to scale.
+  </p>
+</header>
+
+<!-- PACKAGES -->
+<section class="py-24 bg-section">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-teal text-center mb-4">Our Packages</h2>
+    <p class="text-base text-slate-400 text-center mb-14">
+      All pricing listed here is a rough estimate. Every project is unique, and we know your needs might not fit neatly into a predefined package. Whether you want to add on, leave something out, or build something custom from scratch, we’re flexible and happy to adjust your quote.
+    </p>
+
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Basic Presence -->
+      <div class="bg-card rounded-2xl ring-1 ring-teal/20 p-8 flex flex-col">
+        <h3 class="text-xl font-semibold text-teal mb-2">Basic Presence</h3>
+        <ul class="text-slate-300 space-y-2 flex-1">
+          <li>1–3 page website (e.g., Home, About, Contact)</li>
+          <li>Mobile responsive design</li>
+          <li>Basic SEO setup</li>
+          <li>Contact form integration</li>
+        </ul>
+        <p class="mt-6 font-bold text-2xl">$299<br><span class="text-sm font-medium text-slate-400">+ $19+/mo ongoing service</span></p>
+      </div>
+
+      <!-- Standard Business -->
+      <div class="bg-card rounded-2xl ring-1 ring-cyan/20 p-8 flex flex-col">
+        <h3 class="text-xl font-semibold text-cyan mb-2">Standard Business</h3>
+        <ul class="text-slate-300 space-y-2 flex-1">
+          <li>4–8 page website</li>
+          <li>Blog or news section</li>
+          <li>Portfolio or gallery display</li>
+          <li>Advanced SEO</li>
+          <li>Social media integration</li>
+          <li>Basic store (up to 5 products) or appointment booking system</li>
+        </ul>
+        <p class="mt-6 font-bold text-2xl">$800 - $1200<br><span class="text-sm font-medium text-slate-400">+ $39+/mo ongoing service</span></p>
+      </div>
+
+      <!-- E-commerce Pro -->
+      <div class="bg-card rounded-2xl ring-1 ring-emerald/20 p-8 flex flex-col">
+        <h3 class="text-xl font-semibold text-emerald mb-2">E-commerce Pro</h3>
+        <ul class="text-slate-300 space-y-2 flex-1">
+          <li>Up to 15 product pages</li>
+          <li>Full e-commerce functionality (cart + payments)</li>
+          <li>Inventory management</li>
+          <li>Customer accounts</li>
+          <li>Sales and traffic analytics</li>
+        </ul>
+        <p class="mt-6 font-bold text-2xl">$1400 - $2000<br><span class="text-sm font-medium text-slate-400">+ $79+/mo ongoing service</span></p>
+      </div>
+
+      <!-- Custom Application -->
+      <div class="md:col-span-2 lg:col-span-3 bg-card rounded-2xl ring-1 ring-teal/20 p-8 flex flex-col">
+        <h3 class="text-xl font-semibold text-teal mb-2">Custom Application</h3>
+        <ul class="text-slate-300 space-y-2 flex-1">
+          <li>Custom features tailored to your needs</li>
+          <li>Advanced database or backend solutions</li>
+          <li>Third-party API integrations</li>
+          <li>Membership portals or gated content</li>
+          <li>Dedicated maintenance and support</li>
+        </ul>
+        <p class="mt-6 font-bold text-2xl">Custom Quote<br><span class="text-sm font-medium text-slate-400">+ $120+/mo ongoing service</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-sectionAlt text-center">
+  <h2 class="text-3xl font-bold text-cyan mb-6">Ready to start?</h2>
+  <a href="/home/#booking"
+     class="inline-block px-8 py-3 bg-gradient-to-r from-teal to-tealMid text-bgBlack rounded-xl font-semibold shadow hover:from-teal hover:to-cyan transition">
+    Book a Free Consult
+  </a>
+</section>
+
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  location="us-central1"
+  project-id="primo-systems-chat"
+  agent-id="c03076ab-d67b-44d2-9b16-eb2c38cf526f"
+  language-code="en"
+  max-query-length="-1"
+  intent="WELCOME"
+  expand>
+  <df-messenger-chat-bubble
+    chat-title="Chat with Primo">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #FFFFFF;
+    --df-messenger-message-user-background: #DDDDDD;
+    --df-messenger-message-bot-background: #90ddb3;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* pill style reused everywhere */
+  .link-pill {padding:.35rem 1rem;border-radius:9999px;transition:background-color .2s}
+  .link-pill:hover {background-color:rgba(255,255,255,.05)}
+
+  /* xl: bubble transforms into full bar */
+  @media (min-width:1280px){
+    #navBubble{
+      width:calc(100% - 4rem);   /* almost full width */
+      border-radius:0.75rem;
+      justify-content:space-between;
+    }
+  }
+
+</style>
+
+<!-- FOOTER (reuse) -->
+<footer class="bg-bgBlack border-t border-slate-800 text-slate-400 text-sm pt-10 pb-6">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+    <p>&copy; <span id="year"></span> Primeau LLC</p>
+    <p><a href="mailto:primeauriley@gmail.com" class="hover:text-teal">primeauriley@gmail.com</a></p>
+    <p>Grand Junction, CO</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
